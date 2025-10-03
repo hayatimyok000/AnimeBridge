@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "AnimeBridge",
+  "version": "4.0",
+  "description": "MyAnimeList ve AniList'te anime sayfalarına Türkçe anime sitelerine direkt yönlendiren gelişmiş izle butonu. Özel site ekleme, akıllı başlık eşleştirme ve site durumu kontrolü özellikleriyle.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://myanimelist.net/*",
+    "https://anilist.co/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://myanimelist.net/anime/*",
+        "https://anilist.co/anime/*"
+      ],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Anime İzle - Ayarlar"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeBridge</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 380px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .content {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      color: #333;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-button.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .site-option {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .site-option:hover {
+      background: #e8eaf6;
+    }
+
+    .site-option.active {
+      background: #e8eaf6;
+      border-color: #667eea;
+    }
+
+    .site-option input[type="radio"] {
+      margin-right: 12px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .site-info {
+      flex: 1;
+    }
+
+    .site-info strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 3px;
+      color: #333;
+    }
+
+    .site-info span {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .custom-badge {
+      background: #3498db;
+      color: white;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+
+    .delete-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .delete-btn:hover {
+      background: #c0392b;
+    }
+
+    .add-site-form {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 13px;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .form-helper {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .add-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .add-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 12px;
+      background: #fff3cd;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #856404;
+      line-height: 1.5;
+    }
+
+    .info-box {
+      background: #e8f4f8;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #2980b9;
+    }
+
+    .info-box code {
+      background: #34495e;
+      color: #ecf0f1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .footer span {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background: #667eea;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎬🌉 AnimeBridge</h1>
+      <p>Gelişmiş anime izleme deneyimi</p>
+    </div>
+
+    <div class="content">
+      <!-- Tab Butonları -->
+      <div class="tab-buttons">
+        <button class="tab-button active" data-tab="default-tab">Varsayılan</button>
+        <button class="tab-button" data-tab="custom-tab">Özel Siteler</button>
+      </div>
+
+      <!-- Varsayılan Siteler Tab -->
+      <div id="default-tab" class="tab-content active">
+        <div id="default-sites">
+          <div class="site-option" data-site="turkanime">
+            <input type="radio" name="site" value="turkanime" id="turkanime">
+            <label for="turkanime" class="site-info">
+              <strong>TurkAnime</strong>
+              <span>turkanime.co</span>
+            </label>
+          </div>
+
+          <div class="site-option" data-site="anizm">
+            <input type="radio" name="site" value="anizm" id="anizm">
+            <label for="anizm" class="site-info">
+              <strong>Anizm</strong>
+              <span>anizm.net</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="info">
+          💡 MyAnimeList veya AniList'te herhangi bir anime sayfasına gittiğinizde "İzle" butonu göreceksiniz. 
+          Akıllı başlık eşleştirme sistemi sayesinde anime adları doğru şekilde bulunur.
+        </div>
+      </div>
+
+      <!-- Özel Siteler Tab -->
+      <div id="custom-tab" class="tab-content">
+        <div class="info-box">
+          <strong>📌 Özel Site Nasıl Eklenir?</strong>
+          Favori anime sitenizi ekleyebilirsiniz. Arama URL'sinde <code>%s</code> değişkenini kullanın. 
+          Bu değişken otomatik olarak anime adıyla değiştirilecektir.
+          <br><br>
+          <strong>Örnek:</strong> <code>https://example.com/search?q=%s</code>
+        </div>
+
+        <div class="add-site-form">
+          <div class="form-group">
+            <label for="custom-site-name">Site Adı</label>
+            <input type="text" id="custom-site-name" placeholder="Örn: BenimSitem">
+          </div>
+
+          <div class="form-group">
+            <label for="custom-site-url">Site URL</label>
+            <input type="text" id="custom-site-url" placeholder="Örn: example.com">
+            <div class="form-helper">Site alan adını girin (https:// olmadan)</div>
+          </div>
+
+          <div class="form-group">
+            <label for="custom-search-url">Arama URL</label>
+            <input type="text" id="custom-search-url" placeholder="Örn: https://example.com/search?q=%s">
+            <div class="form-helper">%s yerine anime adı gelecek</div>
+          </div>
+
+          <button class="add-btn" id="add-custom-site-btn">➕ Site Ekle</button>
+        </div>
+
+        <div id="custom-sites-list">
+          <!-- Özel siteler buraya yüklenecek -->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Made with ❤️ by 
+      <span id="yt-link">hayatim_yok</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
