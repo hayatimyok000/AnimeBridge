@@ -56,12 +56,6 @@ MyAnimeList ve AniList'te gezinirken Türkçe altyazılı anime sitelerine tek t
 
 
 
-
-## 🤝 Katkıda Bulunma
-
-Metin Özçetin
-TR59 0004 6002 9188 8000 2271 25
-
 ## 📄 Lisans
 
 MIT License - Detaylar için [LICENSE](LICENSE) dosyasına bakın.
