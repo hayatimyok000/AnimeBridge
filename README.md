@@ -1,3 +1,6 @@
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/79e2168a-ab24-4c0d-baa4-85695f9548d7" />
+               
+
 # AnimeBridge - MyAnimeList & AniList Türkçe Anime Yönlendirici
 
 MyAnimeList ve AniList'te gezinirken Türkçe altyazılı anime sitelerine tek tıkla geçiş yapmanızı sağlayan gelişmiş Chrome eklentisi.
