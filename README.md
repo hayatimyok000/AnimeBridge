@@ -63,9 +63,11 @@ TR59 0004 6002 9188 8000 2271 25
 
 MIT License - Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-## 👤 Geliştirici
+👤 Geliştirici
 
 hayatim_yok
+
+Bu proje Claude AI desteğiyle geliştirilmiştir.
 
 ## ⚠️ Sorumluluk Reddi
 
