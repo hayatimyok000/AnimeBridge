@@ -5,19 +5,11 @@ MyAnimeList ve AniList'te gezinirken Türkçe altyazılı anime sitelerine tek t
 ## 🎯 Özellikler
 
 - **Tek Tıkla İzleme**: MyAnimeList veya AniList'teki herhangi bir anime sayfasında direkt "İzle" butonu
-- **Akıllı Başlık Eşleştirme**: Anime başlıklarını otomatik olarak normalize eder ve doğru formatta arar
 - **Çoklu Site Desteği**: TurkAnime, Anizm gibi varsayılan siteler + özel site ekleme
-- **Romaji Desteği**: Romaji başlıklarla da arama yapabilme
-- **Alternatif Başlıklar**: İngilizce, Japonca ve alternatif başlıklarla deneme seçeneği
-- **Başlık Varyasyonları**: Farklı yazılış formatlarını otomatik deneme (örn: "dan-da-dan", "dandadan")
 - **Site Durumu Kontrolü**: Hangi sitelerin erişilebilir olduğunu gösterir
 - **Özel Site Ekleme**: Kendi favori anime sitenizi ekleyebilme
-- **Season/Part Desteği**: "2nd Season", "Part 2" gibi ifadeleri otomatik algılama
 
 ## 📦 Kurulum
-
-### Chrome Web Store'dan (Yakında)
-Eklenti Chrome Web Store'da yayınlandığında buradan indirilebilecek.
 
 ### Manuel Kurulum
 1. Bu repository'yi indirin veya klonlayın
@@ -53,37 +45,19 @@ Eklenti Chrome Web Store'da yayınlandığında buradan indirilebilecek.
   - `activeTab`: Anime bilgilerini okumak için
   - `contextMenus`: Sağ tık menüsü için
 
-## 📋 Başlık Normalizasyon Özellikleri
-
-Eklenti aşağıdaki senaryoları otomatik olarak işler:
-- Boşlukları tire ile değiştirir
-- Özel karakterleri kaldırır
-- "2nd Season", "Part 2" gibi ifadeleri farklı formatlarda dener
-- Kısa tekrarlayan kelimeleri birleştirir (örn: "Dan Da Dan" → "dandadan")
-- Romaji ve alternatif başlıkları kullanır
-
 ## 🎨 Ekran Görüntüleri
 
-[Buraya ekran görüntüleri eklenecek]
+<img width="2536" height="1049" alt="Ekran görüntüsü 2025-10-03 144939" src="https://github.com/user-attachments/assets/2e493b49-7e27-4d9d-90cf-4d1dc9ca1509" />
+
+<img width="2452" height="1096" alt="Ekran görüntüsü 2025-10-03 145001" src="https://github.com/user-attachments/assets/bf2ec041-7438-480b-ac70-e0d61c989261" />
+
+
+
 
 ## 🤝 Katkıda Bulunma
 
-Katkılarınızı bekliyoruz! Lütfen şu adımları izleyin:
-
-1. Bu repository'yi fork edin
-2. Feature branch oluşturun (`git checkout -b feature/YeniOzellik`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
-4. Branch'inizi push edin (`git push origin feature/YeniOzellik`)
-5. Pull Request oluşturun
-
-## 📝 Değişiklik Geçmişi
-
-### v4.0 (Mevcut)
-- Romaji başlık desteği eklendi
-- Özel site ekleme özelliği
-- Gelişmiş başlık normalizasyon
-- Site durumu kontrolü
-- AniList desteği iyileştirildi
+Metin Özçetin
+TR59 0004 6002 9188 8000 2271 25
 
 ## 📄 Lisans
 
@@ -91,7 +65,7 @@ MIT License - Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ## 👤 Geliştirici
 
-Made with ❤️ by hayatim_yok
+hayatim_yok
 
 ## ⚠️ Sorumluluk Reddi
 
